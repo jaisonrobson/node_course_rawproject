@@ -1,4 +1,7 @@
 var express = require('express');
-var msg = require('')
 
 var app = express();
+
+app.listen(3000, function() {
+    console.log("Servidor rodando com express...")
+});
