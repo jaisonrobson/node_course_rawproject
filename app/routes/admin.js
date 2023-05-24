@@ -1,6 +1,6 @@
 module.exports = function (app) {
     app.get('/formulario_inclusao_noticia', function(req, res) {
-        res.render("admin/form_add_noticia");
+        res.render("admin/form_add_noticia", { validacao: {} });
     })
 
     app.post('/noticias/salvar', function(req, res) {
@@ -16,7 +16,7 @@ module.exports = function (app) {
         var errors = req.validationErrors();
 
         if (errors) {
-            res.render("admin/form_add_noticia");
+            res.render("admin/form_add_noticia", { validacao: errors });
 
             return;
         }
