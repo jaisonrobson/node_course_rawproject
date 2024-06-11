@@ -35,7 +35,7 @@
 
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,17 +44,19 @@
 
 	    <div class="container">
 	    	<div class="row">
-	    		<div class="col-md-8">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por <%= noticias[0].autor %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[0].titulo %></a>
-		    			<span class="noticia_data"><%= noticias[0].data_noticia %></span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				<%= noticias[0].resumo %>
-		    			</p>
-		    		</div>
-		    	</div>
+				<% if (noticias.length > 0) { %>
+					<div class="col-md-8">
+						<div class="noticia_wrapper">
+							<span class="noticia_autor">Por <%= noticias[0].autor %></span>
+							<a href="noticia.html" class="noticia_titulo"><%= noticias[0].titulo %></a>
+							<span class="noticia_data"><%= noticias[0].data_noticia %></span>
+							<br />
+							<p class="noticia_resumo">
+								<%= noticias[0].resumo %>
+							</p>
+						</div>
+					</div>
+				<% } %>
 
 				<% for (var i = 1; i < noticias.length; i++) { %>
 					<div class="col-md-4">
@@ -73,7 +75,7 @@
 	    	</div>
 
 	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="noticias.html">Ver todas as notícias</a></button>
+	    		<button type="button" class="btn btn-default"><a href="noticias">Ver todas as notícias</a></button>
 	    	</div>
 
 	    </div>
